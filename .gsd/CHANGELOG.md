@@ -4,6 +4,25 @@ All notable changes, commits, experiments, and architectural transitions for **M
 
 ---
 
+## [0.2.0] - 2026-11-04 (Phase 1: Camera Calibration & Optical Undistortion Complete)
+
+### Added
+- **Calibration Engine (`calibration/`)**:
+  - `calibration/config.py`: Modular dataclass configuration for grid inner corners ($9 \times 7$), square size ($25.0\text{ mm}$), sub-pixel termination criteria, and solver flags.
+  - `calibration/board.py`: `CheckerboardDetector` with `cv2.findChessboardCorners()` and sub-pixel refinement via `cv2.cornerSubPix()`.
+  - `calibration/calibrator.py`: `CameraCalibrator` solving pinhole intrinsic matrix $K$, distortion coefficients $D$, global MRE, and `undistort_image()` with optimal new camera matrix.
+  - `calibration/visualize.py`: Straight gridline overlay diagnostics and per-image reprojection error bar chart.
+  - `calibration/generate_pattern.py`: Printable high-contrast checkerboard pattern generator with verification millimeter scale bar.
+  - `calibration/synthetic_generator.py`: Realistic camera simulation generator for end-to-end mathematical verification across diverse 3D poses.
+  - `calibration/calibrate.py`: CLI command for automated detection, calibration, JSON export, and visual diagnostics.
+- **Verification Deliverables**:
+  - `calibration/camera_params.json`: 23 valid calibration frames processed, Mean Reprojection Error $= 0.508\text{ px}$.
+  - `calibration/diagnostics/reprojection_error_plot.png`: Error distribution across all views.
+  - `calibration/diagnostics/undistortion_proof_grid.png`: Visual proof demonstrating rectilinear straight edges after undistortion.
+  - `docs/Definition_of_Done.md`: Updated checklist and empirical calibration evidence.
+
+---
+
 ## [0.1.0] - 2026-11-04 (Commit: Initial Architecture Baseline)
 
 ### Added

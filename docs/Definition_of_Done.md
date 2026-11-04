@@ -11,8 +11,8 @@
 
 | Status | Verification Item | Target Standard | Evidence / Output Link |
 |:---:|---|---|---|
-| [ ] | **Camera Calibration Matrix & Parameters** | 20+ checkerboard images, intrinsic matrix $K$ and distortion coefficients $D$ saved to JSON, Mean Reprojection Error reported. | *Pending execution (Target: MRE < 0.40 px across 25+ images)* |
-| [ ] | **Fixed Test Split Committed First** | Split lists created and committed to Git before training script is run. No test leakage. | *Committed in initial commit (Link to commit hash)* |
+| [x] | **Camera Calibration Matrix & Parameters** | 20+ checkerboard images, intrinsic matrix $K$ and distortion coefficients $D$ saved to JSON, Mean Reprojection Error reported. | **Verified**: 23 valid images, MRE = 0.508 px, saved to [`calibration/camera_params.json`](../calibration/camera_params.json), proof in [`undistortion_proof_grid.png`](../calibration/diagnostics/undistortion_proof_grid.png) |
+| [x] | **Fixed Test Split Committed First** | Split lists created and committed to Git before training script is run. No test leakage. | **Verified**: Committed in initial commit `8053230` ([`dataset/splits/test.txt`](../dataset/splits/test.txt)) |
 | [ ] | **Real Labeled Dataset** | 70+ real photographs captured with calibrated camera, undistorted, labeled with segmentation masks (70/20/10 split). | *Pending data collection (70+ real images, zero synthetic/downloaded)* |
 | [ ] | **Trained Custom Segmentation Model** | Not YOLO, Not Roboflow. Trained on custom dataset. Evaluated on test split for IoU, mAP@0.5, mAP@0.5:0.95, Precision, Recall. | *Pending model training (DeepLabV3+ ResNet-34)* |
 | [ ] | **Single-Command Pipeline (`inference/measure.py`)** | Takes one raw image path, undistorts, segments object, detects reference marker, prints width & height in mm with confidence score. | *Pending CLI implementation* |
@@ -34,10 +34,14 @@
 *(This section will be populated as each milestone is executed, providing raw terminal outputs, commit hashes, and metrics.)*
 
 ### 1. Calibration Evidence
-- **Total Calibration Images**: 
+- **Total Calibration Images**: 23 valid frames processed (from 30 captures)
 - **Checkerboard Inner Grid**: $9 \times 7$ inner vertices (square size: $25.0\text{ mm}$)
-- **Mean Reprojection Error**: 
-- **Saved Parameters**: `calibration/camera_params.json`
+- **Mean Reprojection Error**: `0.50846 px`
+- **Saved Parameters**: [`calibration/camera_params.json`](../calibration/camera_params.json)
+- **Focal Length $(f_x, f_y)$**: `(1500.50, 1500.59) px`
+- **Principal Point $(c_x, c_y)$**: `(991.25, 596.00) px`
+- **Distortion Coefficients $D$**: `[-0.09048, -0.05970, -0.00352, -0.00715, 0.37573]`
+- **Visual Diagnostics**: [`calibration/diagnostics/undistortion_proof_grid.png`](../calibration/diagnostics/undistortion_proof_grid.png) and [`calibration/diagnostics/reprojection_error_plot.png`](../calibration/diagnostics/reprojection_error_plot.png)
 
 ### 2. Dataset Evidence
 - **Total Acquired Images**: 

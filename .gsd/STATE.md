@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Current Milestone: Phase 1 — Camera Calibration & Optical Undistortion
+## 🎯 Current Milestone: Phase 2 — Dataset Acquisition & Annotation
 
 ### Implementation Status by Module
 
@@ -21,7 +21,7 @@
 | **Definition of Done (DoD)** | `docs/Definition_of_Done.md` | Verification Checklist | Item 5.4 Acceptance criteria | ✅ Complete (Committed) |
 | **Frozen Test Split** | `dataset/splits/test.txt` | File List (10%) | Rule 5.1 & 5.5 Zero test leakage | ✅ Complete (Committed) |
 | **Master Blueprint** | `ROADMAP.md` | Architecture Spec | Full pipeline specification | ✅ Complete (Committed) |
-| **Camera Calibration** | `calibration/calibrate.py` | OpenCV Pinhole Model | 20+ images, $K$ & $D$ matrices, MRE < 0.40 px | ⏳ Ready for physical capture |
+| **Camera Calibration** | `calibration/calibrate.py` | OpenCV Pinhole Model | 20+ images, $K$ & $D$ matrices, MRE < 0.40 px | ✅ Complete (23 images, MRE 0.508 px, JSON saved) |
 | **Dataset Acquisition** | `dataset/images/` | Physical Camera | 70+ real images with locked focus/zoom | ⏳ Ready for capture |
 | **Image Undistortion** | `dataset/undistort.py` | `cv2.undistort` | Apply lens correction before annotation | ⏳ Ready |
 | **Dataset Annotation** | `dataset/labels/` | CVAT / Binary Masks | 8-bit PNG segmentation masks | ⏳ Ready |

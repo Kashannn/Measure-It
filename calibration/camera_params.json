@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "system": "Measure-It Optical Metrology",
+    "calibration_timestamp": "2026-11-04T17:46:37.677581",
+    "image_count": 23,
+    "image_width": 1920,
+    "image_height": 1080,
+    "grid_inner_corners": [
+      9,
+      7
+    ],
+    "square_size_mm": 25.0,
+    "mean_reprojection_error_px": 0.50846
+  },
+  "intrinsics": {
+    "camera_matrix_K": [
+      [
+        1500.5019682506318,
+        0.0,
+        991.2541081647686
+      ],
+      [
+        0.0,
+        1500.5895685034945,
+        595.9993797498812
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "distortion_coefficients_D": [
+      [
+        -0.09047622171706336,
+        -0.05969834123087012,
+        -0.003519229408035805,
+        -0.007153299272091048,
+        0.3757278099956247
+      ]
+    ],
+    "focal_length_x_px": 1500.502,
+    "focal_length_y_px": 1500.59,
+    "principal_point_cx_px": 991.254,
+    "principal_point_cy_px": 595.999
+  }
+}
