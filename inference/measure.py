@@ -3,8 +3,14 @@
 
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
+import warnings
+
+# Suppress external library update network warnings
+os.environ["NO_ALBUMENTATIONS_UPDATE"] = "1"
+warnings.filterwarnings("ignore")
 
 # Ensure repository root is on sys.path
 REPO_ROOT = Path(__file__).resolve().parent.parent

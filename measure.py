@@ -8,7 +8,14 @@ Supports:
 
 from __future__ import annotations
 
+import os
 import sys
+import warnings
+
+# Suppress external library version check warnings
+os.environ["NO_ALBUMENTATIONS_UPDATE"] = "1"
+warnings.filterwarnings("ignore", category=UserWarning)
+
 from pathlib import Path
 
 # Add repo root to path
