@@ -31,7 +31,7 @@ class InputGuardrails:
         max_tilt_skew: float = 1.10,
         min_brightness: float = 40.0,
         max_brightness: float = 240.0,
-        min_blur_var: float = 80.0,
+        min_blur_var: float = 45.0,
         min_model_confidence: float = 0.85,
     ):
         self.max_tilt_skew = max_tilt_skew
