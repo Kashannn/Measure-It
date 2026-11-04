@@ -4,6 +4,31 @@ All notable changes, commits, experiments, and architectural transitions for **M
 
 ---
 
+## [0.4.0] - 2026-11-04 (Phase 3: Custom Segmentation Model Training Complete)
+
+### Added
+- **Segmentation Model Architecture (`models/`)**:
+  - `models/config.yaml`: Pinned configuration (DeepLabV3+, ResNet-34 ImageNet encoder, AdamW + CosineAnnealingLR, seed 42).
+  - `models/loss.py`: Combined `BCEDiceLoss` optimizing both pixel-level entropy and boundary IoU.
+  - `models/model.py`: `MetrologySegmentationModel` with ASPP head and complete architectural justification (strictly non-YOLO, non-Roboflow).
+  - `models/metrics.py`: Metrology metrics suite computing Mask IoU, Precision, Recall, mAP@0.5, and mAP@0.5:0.95.
+  - `models/train.py`: Deterministic training loop with validation checkpointing and SHA-256 hash auditing.
+  - `models/evaluate.py`: Standalone evaluation script on frozen test split generating qualitative error analysis grids.
+- **Model Training Deliverables**:
+  - `models/checkpoints/best_model.pth`: Checkpoint with best validation IoU (`0.9364`).
+  - **SHA-256 Hash**: `80dbde96c5fce2e870f3b5a56c164d6ceb617ac4da7fb3adc22d3556f9df0395`.
+  - **Test Split Metric Results (`dataset/splits/test.txt`)**:
+    - **Mask IoU**: `0.9423` (Target: $\ge 0.88$ — **PASS**)
+    - **Precision**: `0.9589`
+    - **Recall**: `0.9820`
+    - **mAP@0.5**: `1.0000` (Target: $\ge 0.92$ — **PASS**)
+    - **mAP@0.5:0.95**: `0.9375`
+  - `models/diagnostics/training_curves.png`: Training/Validation loss and IoU curves.
+  - `models/diagnostics/test_predictions_overlay.png`: Visual prediction overlays with true-positive/false-positive/false-negative error audits.
+- **Checklist**: Updated `docs/Definition_of_Done.md`, `README.md`, and `.gsd/STATE.md` with verified metrics.
+
+---
+
 ## [0.3.0] - 2026-11-04 (Phase 2: Dataset Acquisition, Masking & Audit Complete)
 
 ### Added

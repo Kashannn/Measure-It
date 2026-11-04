@@ -1,0 +1,35 @@
+# Model Training and Architecture Configuration
+# Pinned for complete reproducibility across identical hardware environments
+
+architecture: "DeepLabV3Plus"
+encoder_name: "resnet34"
+encoder_weights: "imagenet"
+in_channels: 3
+classes: 1  # Single-channel binary object mask
+
+# Training hyperparameters
+random_seed: 42
+batch_size: 8
+num_workers: 0
+epochs: 15
+learning_rate: 0.0003
+weight_decay: 0.0001
+scheduler_type: "CosineAnnealingLR"
+scheduler_t_max: 15
+scheduler_eta_min: 0.000001
+
+# Loss weighting
+bce_weight: 0.5
+dice_weight: 0.5
+
+# Input sizing
+input_height: 512
+input_width: 512
+
+# File paths
+checkpoint_dir: "models/checkpoints"
+diagnostics_dir: "models/diagnostics"
+best_model_name: "best_model.pth"
+split_train: "dataset/splits/train.txt"
+split_val: "dataset/splits/val.txt"
+split_test: "dataset/splits/test.txt"

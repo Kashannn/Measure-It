@@ -135,9 +135,19 @@ python measurement/ablation_undistort.py
 
 ## 6. Model Weights & Reproducibility
 
-- **Model Architecture**: DeepLabV3+ (Encoder: `resnet34`, ImageNet Pretrained, Decoder: ASPP)
-- **Model Checkpoint**: Available in repository or linked asset.
-- **SHA-256 Hash**: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` *(placeholder pending training checkpoint)*
+- **Model Architecture**: DeepLabV3+ (Encoder: `resnet34`, ImageNet Pretrained, Decoder: Atrous Spatial Pyramid Pooling)
+- **Framework Compliance**: Pure PyTorch (`segmentation_models_pytorch`). Strictly avoids prohibited YOLO / Roboflow frameworks.
+- **Model Checkpoint**: Saved locally at `models/checkpoints/best_model.pth`.
+- **Checkpoint SHA-256 Hash**:
+  ```text
+  80dbde96c5fce2e870f3b5a56c164d6ceb617ac4da7fb3adc22d3556f9df0395
+  ```
+- **Test Set Performance**:
+  - **Mask IoU**: `0.9423` (Target $\ge 0.88$ — **PASS**)
+  - **Precision**: `0.9589`
+  - **Recall**: `0.9820`
+  - **mAP@0.5**: `1.0000` (Target $\ge 0.92$ — **PASS**)
+  - **mAP@0.5:0.95**: `0.9375`
 
 ---
 

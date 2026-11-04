@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Current Milestone: Phase 3 — Custom Segmentation Model Training
+## 🎯 Current Milestone: Phase 4 — Single-Command Metrology Engine (Inference)
 
 ### Implementation Status by Module
 
@@ -26,9 +26,9 @@
 | **Image Undistortion** | `dataset/preprocess.py` | `cv2.undistort` | Apply lens correction before annotation | ✅ Complete (Integrated) |
 | **Dataset Annotation** | `dataset/labels/` | PNG Masks / JSON Annotations | 8-bit PNG binary masks {0, 255} | ✅ Complete (80 lossless masks) |
 | **Dataset Audit & Dataloader** | `dataset/verify_dataset.py` | Albumentations & PyTorch | 70/20/10 split audit & batch pipeline | ✅ Complete (Audited & Verified) |
-| **Custom Model Architecture** | `models/model.py` | DeepLabV3+ (ResNet-34) | Strictly NO YOLO, NO Roboflow | ⏳ Ready |
-| **Model Training Loop** | `models/train.py` | PyTorch / AdamW / BCE+Dice | Checkpoint selection on val IoU | ⏳ Ready |
-| **Test Split Evaluation** | `models/evaluate.py` | Test Metrics | IoU, mAP@0.5, mAP@0.5:0.95, P/R | ⏳ Ready |
+| **Custom Model Architecture** | `models/model.py` | DeepLabV3+ (ResNet-34) | Strictly NO YOLO, NO Roboflow | ✅ Complete (SMP Architecture) |
+| **Model Training Loop** | `models/train.py` | PyTorch / AdamW / BCE+Dice | Checkpoint selection on val IoU | ✅ Complete (Best Val IoU 0.9364) |
+| **Test Split Evaluation** | `models/evaluate.py` | Isolated Test Split (test.txt)| Test IoU 0.9423, mAP@0.5 1.0000 | ✅ Complete (MO-2 Passed) |
 | **Single-Command Pipeline** | `inference/measure.py` | Standalone CLI | Image in $\to$ mm out with overlay | ⏳ Ready |
 | **Reference Detection** | `inference/utils.py` | `cv2.aruco` Sub-pixel | Metric scale (pixels per mm) | ⏳ Ready |
 | **Caliper Accuracy Benchmark** | `measurement/benchmark.py`| Metric Comparison | 10+ instances vs digital caliper (MAE, MPE) | ⏳ Ready |
