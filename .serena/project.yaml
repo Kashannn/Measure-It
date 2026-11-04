@@ -1,0 +1,21 @@
+project_name: "Measure-It"
+version: "2.0"
+languages:
+  - python
+entrypoint: "inference/measure.py"
+memory_root: ".serena/memories"
+rules:
+  prohibited_architectures:
+    - "ultralytics"
+    - "yolo"
+    - "roboflow"
+  permitted_architectures:
+    - "segmentation_models_pytorch"
+    - "torchvision"
+    - "custom_pytorch"
+  git_branch: "dev-test01"
+  initial_commit_requirements:
+    - "docs/Plan.md"
+    - "docs/Objectives.md"
+    - "docs/Definition_of_Done.md"
+    - "dataset/splits/test.txt"

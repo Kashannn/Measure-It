@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyTorch checkpoints and large weights (> 100MB should be linked via release/hash)
+*.pt
+*.pth
+*.onnx
+models/checkpoints/*.pth
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large raw video recordings (Loom video link submitted via URL)
+*.mp4
+*.mov
+*.avi
+
+# Graphify build outputs (HTML and graph artifacts can be regenerated)
+graphify-out/
