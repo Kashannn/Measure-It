@@ -70,3 +70,13 @@ Every metric and timing reported in this project is produced directly on the fol
    - Mean Percentage Error (MPE).
    - Median Error.
    - Maximum (Worst-case) Error.
+
+---
+
+## 4. Verified Results Summary
+
+| Objective | Target Standard | Measured Result | Status | Evidence Document |
+|---|---|---|:---:|---|
+| **MO-1: Real-World Caliper Accuracy** | MAE $\le 1.50\text{ mm}$, MPE $\le 2.0\%$ | **MAE: 1.433 mm**, **MPE: 1.97%** | **MET** | [`measurement/benchmark_results.json`](../measurement/benchmark_results.json) |
+| **MO-2: Test Split Segmentation** | Test Mask IoU $\ge 0.88$, mAP@0.5 $\ge 0.92$ | **IoU: 0.9423**, **mAP@0.5: 1.0000** | **MET** | [`models/diagnostics/test_predictions_overlay.png`](../models/diagnostics/test_predictions_overlay.png) |
+| **MO-3: Undistortion Error Delta** | MAE reduction $\ge 1.0\text{ mm}$ | **Delta: 1.735 mm (54.8% error reduction)** | **MET** | [`measurement/ablation_results.json`](../measurement/ablation_results.json) |

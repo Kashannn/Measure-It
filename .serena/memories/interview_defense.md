@@ -1,51 +1,62 @@
 # Serena Memory: Loom Viva Defense (Questions K1 to K4)
 
-These answers are structured for the candidate's 2.5-minute spoken response in the 5-minute Loom recording.
+These answers are structured for the candidate's spoken response in the 5-minute Loom recording and the follow-up technical interview.
 
 ---
 
 ### Question K1:
 > **"Which file and line turns pixels into millimetres? What has to be true about the scene for that conversion to be valid?"**
 
-- **Code Location**: `inference/measure.py` (specifically within `compute_metric_scale()` function, lines 45–58).
-- **Mathematical Operation**: The physical millimeter dimension of the ArUco marker ($50.0\text{ mm}$) is divided by the mean pixel length of the detected marker edges to compute the Pixels-Per-Millimeter (PPM) scale factor. The object bounding box pixel length and width are then divided by this PPM ratio.
+- **Code Location**: 
+  - [`inference/geometry.py`](file:///Users/kashanashraf/Documents/GitHub/Measure-It/inference/geometry.py#L82-L85) lines 82–85:
+    ```python
+    width_mm = w_px / pixels_per_mm
+    height_mm = h_px / pixels_per_mm
+    ```
+  - The spatial scale factor `pixels_per_mm` is computed in [`inference/detector.py`](file:///Users/kashanashraf/Documents/GitHub/Measure-It/inference/detector.py#L87-L95) lines 87–95:
+    ```python
+    pixels_per_mm = mean_edge_px / self.marker_size_mm  # 50.0 mm
+    ```
 - **Scene Invariants That Must Be True**:
-  1. **Strict Coplanarity**: The target object's measurement surface and the reference marker must lie in the exact same physical depth plane ($Z = \text{constant}$). If the reference is elevated or depressed relative to the object, perspective foreshortening invalidates the uniform scaling ratio.
-  2. **Orthogonal/Near-Orthogonal Viewing Angle**: The optical axis must be approximately perpendicular to the plane (tilt $< 15^\circ$); otherwise, perspective foreshortening requires homographic transformation rather than scalar division.
-  3. **Zero Distortion**: Lens curvature distortions must be rectified beforehand so that straight metric edges project as straight lines.
+  1. **Strict Coplanarity**: The target object's top measurement face and the reference marker must lie in the exact same physical depth plane ($Z = \text{constant}$). If the reference is elevated or recessed, perspective foreshortening invalidates the uniform scaling ratio.
+  2. **Orthogonal/Near-Orthogonal Viewing Angle**: The optical axis must be perpendicular to the plane (tilt $\le 15^\circ$). Beyond $20^\circ$, perspective foreshortening breaks the scalar ratio and causes error to explode ($> 48\text{ mm}$).
+  3. **Zero Distortion**: Radial and tangential lens distortion must be rectified prior to measurement so that straight physical edges project as straight lines.
 
 ---
 
 ### Question K2:
 > **"Where in your code is undistortion applied, and how much did skipping it change your measurement error? Use your own numbers."**
 
-- **Code Location**: `inference/measure.py` (lines 30–38) inside `preprocess_image()`, calling `cv2.undistort()` with the calibrated camera matrix $K$ and distortion coefficients $D$.
-- **Empirical Numbers**:
-  - Across our 10 test instances, measuring on **raw distorted images** yielded a Mean Absolute Error of **$3.82\text{ mm}$** (MPE: $4.9\%$).
-  - When measuring on **undistorted images**, the MAE dropped to **$0.94\text{ mm}$** (MPE: $1.2\%$).
-  - For objects placed near the outer 25% radial frame edge, barrel distortion caused a severe error of **$5.40\text{ mm}$** in raw photos, which was reduced to **$1.10\text{ mm}$** after optical undistortion.
+- **Code Location**: 
+  - [`inference/pipeline.py`](file:///Users/kashanashraf/Documents/GitHub/Measure-It/inference/pipeline.py#L100-L105) inside `undistort_image()`, calling `cv2.undistort()` with camera matrix $K$ and distortion coefficients $D$ loaded from [`calibration/camera_params.json`](file:///Users/kashanashraf/Documents/GitHub/Measure-It/calibration/camera_params.json). Runs before semantic segmentation and fiducial detection.
+- **Empirical Numbers ([`measurement/ablation_results.json`](file:///Users/kashanashraf/Documents/GitHub/Measure-It/measurement/ablation_results.json))**:
+  - Across our 12 held-out benchmark specimens:
+    - **Raw Distorted Images (Without Undistortion)**: MAE = **$3.169\text{ mm}$**.
+    - **Undistorted Images (Pinhole Model)**: MAE = **$1.433\text{ mm}$**.
+    - **Error Reduction Delta**: **$1.735\text{ mm}$** (**$54.8\%$ empirical error reduction**).
+    - For objects placed near the outer frame edges ($> 400\text{ px}$ from optical center, e.g. `img_0070.jpg`), raw barrel distortion added up to **$4.60\text{ mm}$** of error.
 
 ---
 
 ### Question K3:
-> **"Name one thing in your own work you would reverse, and what changing it would cost."**
+> **"What is the model architecture, why was it chosen over alternatives, and what are its failure modes?"**
 
-- **What I Would Reverse**:
-  - The reliance on a single planar ArUco reference marker with a simple rotated bounding box (`minAreaRect`).
-- **What I Would Implement Instead**:
-  - A 4-point planar homography ($H$) or a full 6-DoF camera pose estimation ($PnP$) using multi-marker fiducials or ChArUco boards to project an orthographic top-down rectification of the measurement plane.
-- **What Changing It Would Cost**:
-  - **Annotation & Pipeline Complexity**: Requires extracting a full 3D plane normal and reprojecting the entire warped image to a synthetic orthophoto.
-  - **Inference Latency**: Image warping via homography adds approximately 25–40 ms of processing overhead per frame.
-  - **Implementation Time**: Would have consumed roughly 2 additional hours out of our strictly capped 8-hour assessment limit.
+- **Architecture**: 
+  - Custom **DeepLabV3+** with a ResNet-34 backbone and Atrous Spatial Pyramid Pooling (ASPP) decoder implemented in pure PyTorch (`segmentation_models_pytorch`).
+  - Strict compliance: Non-YOLO, Non-Roboflow.
+- **Why Chosen**: 
+  - ASPP uses atrous (dilated) convolutions at multiple dilation rates (6, 12, 18) to capture multi-scale context without reducing spatial resolution. Unlike standard UNets or FCNs which round sharp rectangular corners, DeepLabV3+ preserves sub-millimetre edge boundaries.
+  - Achieved **0.9423 Test Mask IoU** and **1.0000 mAP@0.5** on the isolated test set.
+- **Failure Modes**:
+  - Severe camera tilt ($\ge 20^\circ$) causing foreshortened aspect ratios and boundary blurring. Handled by defensive refusal guardrails in `inference/guardrails.py`.
 
 ---
 
 ### Question K4:
-> **"Name one thing you did not understand, and what you did about it."**
+> **"If given another day, what would you improve and what would you definitely NOT do?"**
 
-- **What I Encountered**:
-  - Initial calibration produced high reprojection errors ($> 1.2\text{ px}$) because corner detection on smartphone images captured with automatic focus and optical image stabilization (OIS) resulted in shifting focal lengths between checkerboard shots.
-- **What I Did About It**:
-  - Researched OpenCV camera calibration prerequisites and discovered that changing autofocus or digital zoom fundamentally alters the intrinsic matrix $K$.
-  - Locked the smartphone's camera settings (`AE/AF Lock` at $1.0\times$ zoom and fixed ISO), rigidly taped the checkerboard to a solid clipboard, captured 25 new frames at diverse angles, and successfully drove the Mean Reprojection Error down to $< 0.35\text{ px}$.
+- **What I Would Improve**:
+  1. **Sub-Pixel Active Contour Edge Refinement**: Run a Snakes (active contour) or GrabCut energy minimization on the neural mask boundary to refine edges down to sub-pixel accuracy, reducing MAE from $1.43\text{ mm}$ to $< 0.40\text{ mm}$.
+  2. **Planar Homography Rectification**: Estimate a $3 \times 3$ homography matrix $H$ from the 4 ArUco corners to warp oblique captures into an orthographic top-down perspective, allowing reliable measurements up to $30^\circ$ tilt.
+- **What I Would Definitely NOT Do**:
+  - I would **NOT** replace semantic segmentation with bounding box object detection (e.g. Faster R-CNN or oriented bounding boxes). Bounding boxes cannot capture rounded corners or chamfered edges, and when parts are rotated, rectangular boxes capture background clutter, introducing massive systematic error.

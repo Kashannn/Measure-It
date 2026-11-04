@@ -157,4 +157,57 @@ As mandated by Section 5.2 of the technical assessment specification:
 - [docs/Plan.md](docs/Plan.md) — 1-Page Time Allocation, Strategy & Architectural Decision Records.
 - [docs/Objectives.md](docs/Objectives.md) — Measurable Objectives (MO-1, MO-2, MO-3) and Environmental Specifications.
 - [docs/Definition_of_Done.md](docs/Definition_of_Done.md) — Acceptance Criteria and Verification Evidence Checklist.
+- [docs/LOOM_SCRIPT.md](docs/LOOM_SCRIPT.md) — Timed 5-Minute Video Recording Script & Cue Cards.
 - [ROADMAP.md](ROADMAP.md) — Master Technical Implementation Blueprint.
+
+---
+
+## 8. Empirical Benchmark & Validation Results
+
+### A. Caliper Accuracy Benchmark (MO-1 Met)
+Benchmarked across 12 held-out specimens ([`measurement/benchmark_accuracy.py`](measurement/benchmark_accuracy.py)):
+
+| Metric | Target Standard | Measured Result | Status |
+|---|---|---|:---:|
+| **Mean Absolute Error (MAE)** | $\le 1.50\text{ mm}$ | **1.433 mm** | **MET** |
+| **Mean Percentage Error (MPE)** | $\le 2.0\%$ | **1.97%** | **MET** |
+| **Standard Deviation of Error** | — | **1.311 mm** | — |
+| **Worst-Case Deviation** | $\le 6.0\text{ mm}$ | **5.620 mm** | **MET** |
+
+Visual proof: [`measurement/diagnostics/caliper_benchmark.png`](measurement/diagnostics/caliper_benchmark.png)
+
+### B. Undistortion Ablation Proof (Item 6 Met)
+Direct comparison of same instances on raw sensor vs calibrated undistorted frames ([`measurement/ablation_undistort.py`](measurement/ablation_undistort.py)):
+
+| Condition | Mean Absolute Error (MAE) | Mean Percentage Error |
+|---|---|---|
+| **Raw Distorted Sensor Images** | $3.169\text{ mm}$ | $4.36\%$ |
+| **Undistorted Calibrated Images** | **$1.433\text{ mm}$** | **$1.97\%$** |
+| **Empirical Error Reduction Delta** | **$-1.735\text{ mm}$** | **$54.8\%$ reduction** |
+
+Visual proof: [`measurement/diagnostics/undistortion_ablation.png`](measurement/diagnostics/undistortion_ablation.png)
+
+### C. Tilt Stress Test & Breaking Angle (Item 8 Met)
+Quantitative degradation curve under out-of-plane pitch angles ($0^\circ \to 45^\circ$):
+- **Operational Zone ($0^\circ \text{--} 15^\circ$)**: MAE $\le 1.50\text{ mm}$, highly reliable.
+- **Empirical Breaking Threshold**: Pitch **$\ge 20^\circ$** causes perspective foreshortening failure where measurement error explodes beyond $48\text{ mm}$ ($> 74\%$ MPE).
+Visual proof: [`measurement/diagnostics/tilt_degradation_curve.png`](measurement/diagnostics/tilt_degradation_curve.png)
+
+### D. Defensive Rejection Guardrails (Item 9 Met)
+Refuses untrustworthy inputs rather than returning corrupt numbers ([`inference/guardrails.py`](inference/guardrails.py)):
+- **Exit Code 0 (`SUCCESS`)**: Clean valid measurement computed.
+- **Exit Code 1 (`ERROR`)**: Missing or unreadable image file.
+- **Exit Code 2 (`OBJECT_NOT_FOUND`)**: Target specimen absent or mask $< 5000\text{ px}$.
+- **Exit Code 3 (`REFERENCE_NOT_FOUND`)**: ArUco fiducial missing or distorted.
+- **Exit Code 4 (`UNTRUSTWORTHY_INPUT_REJECTED`)**: Refused due to severe tilt ($> 1.10$ skew), blur (Laplacian $< 80$), underexposure ($< 40$), or low model confidence ($< 0.85$).
+
+---
+
+## 9. Viva Defense & Technical Interview (Questions K1 to K4)
+
+| Question | Core Answer Summary | Exact Code Reference |
+|---|---|---|
+| **K1: Which file & line turns px into mm?** | Pixel dimensions from `cv2.minAreaRect` are divided by `pixels_per_mm`: `width_mm = w_px / PPM` and `height_mm = h_px / PPM`. Requires coplanar reference and specimen. | [`inference/geometry.py#L82-L85`](inference/geometry.py#L82-L85) & [`inference/detector.py#L87-L95`](inference/detector.py#L87-L95) |
+| **K2: Where is undistortion applied & impact?** | Applied in `undistort_image()` via `cv2.undistort(K, D)` before segmentation and ArUco detection. Reduces error from $3.17\text{ mm}$ to $1.43\text{ mm}$ (54.8% error reduction). | [`inference/pipeline.py#L100-L105`](inference/pipeline.py#L100-L105) & [`measurement/ablation_undistort.py`](measurement/ablation_undistort.py) |
+| **K3: Model architecture & failure modes?** | Custom DeepLabV3+ with ResNet-34 backbone and ASPP head (pure PyTorch, non-YOLO/non-Roboflow). Breaks under steep tilt $\ge 20^\circ$, caught by defensive refusal. | [`models/model.py`](models/model.py) & [`inference/guardrails.py`](inference/guardrails.py) |
+| **K4: What to improve & what NOT to do?** | **Improve**: Snakes / GrabCut sub-pixel edge refinement and 4-point planar homography warp. **NOT DO**: Replace segmentation with bounding box object detection (cannot fit rounded corners, encapsulates background clutter). | Full discussion in [`docs/LOOM_SCRIPT.md`](docs/LOOM_SCRIPT.md) |
