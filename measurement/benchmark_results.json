@@ -1,13 +1,13 @@
 {
-  "status": "PASS",
-  "num_instances": 12,
-  "mae_total_mm": 1.4333,
-  "mpe_total_pct": 1.974,
-  "std_error_mm": 1.311,
+  "status": "FAIL",
+  "num_instances": 9,
+  "mae_total_mm": 1.6717,
+  "mpe_total_pct": 2.326,
+  "std_error_mm": 1.3927,
   "max_error_mm": 5.62,
   "mo1_mae_threshold_mm": 1.5,
   "mo1_mpe_threshold_pct": 2.0,
-  "mo1_passed": true,
+  "mo1_passed": false,
   "instances": [
     {
       "image": "img_0073.jpg",
@@ -38,21 +38,6 @@
       "mean_pe_pct": 2.54,
       "confidence": 0.957,
       "ppm": 5.14
-    },
-    {
-      "image": "img_0075.jpg",
-      "gt_width_mm": 54.0,
-      "gt_height_mm": 85.5,
-      "meas_width_mm": 54.57,
-      "meas_height_mm": 86.39,
-      "error_width_mm": 0.57,
-      "error_height_mm": 0.89,
-      "abs_error_mean_mm": 0.73,
-      "pe_width_pct": 1.06,
-      "pe_height_pct": 1.04,
-      "mean_pe_pct": 1.05,
-      "confidence": 0.969,
-      "ppm": 5.21
     },
     {
       "image": "img_0076.jpg",
@@ -100,21 +85,6 @@
       "ppm": 4.62
     },
     {
-      "image": "img_0079.jpg",
-      "gt_width_mm": 54.0,
-      "gt_height_mm": 85.5,
-      "meas_width_mm": 53.91,
-      "meas_height_mm": 87.36,
-      "error_width_mm": 0.09,
-      "error_height_mm": 1.86,
-      "abs_error_mean_mm": 0.975,
-      "pe_width_pct": 0.17,
-      "pe_height_pct": 2.18,
-      "mean_pe_pct": 1.17,
-      "confidence": 0.965,
-      "ppm": 4.82
-    },
-    {
       "image": "img_0080.jpg",
       "gt_width_mm": 54.0,
       "gt_height_mm": 85.5,
@@ -158,21 +128,6 @@
       "mean_pe_pct": 4.89,
       "confidence": 0.951,
       "ppm": 4.59
-    },
-    {
-      "image": "img_0071.jpg",
-      "gt_width_mm": 54.0,
-      "gt_height_mm": 85.5,
-      "meas_width_mm": 54.03,
-      "meas_height_mm": 84.63,
-      "error_width_mm": 0.03,
-      "error_height_mm": 0.87,
-      "abs_error_mean_mm": 0.45,
-      "pe_width_pct": 0.06,
-      "pe_height_pct": 1.02,
-      "mean_pe_pct": 0.54,
-      "confidence": 0.966,
-      "ppm": 4.94
     },
     {
       "image": "img_0072.jpg",

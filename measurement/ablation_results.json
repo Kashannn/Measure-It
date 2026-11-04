@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "mean_raw_mae_mm": 3.1687,
-  "mean_undistorted_mae_mm": 1.4333,
-  "mean_error_reduction_mm": 1.7354,
-  "mean_error_reduction_pct": 54.77,
+  "mean_raw_mae_mm": 3.3222,
+  "mean_undistorted_mae_mm": 1.6717,
+  "mean_error_reduction_mm": 1.6506,
+  "mean_error_reduction_pct": 49.68,
   "instances": [
     {
       "image": "img_0073.jpg",
@@ -20,14 +20,6 @@
       "mae_undistorted_mm": 1.635,
       "error_delta_mm": 2.045,
       "improvement_pct": 55.6
-    },
-    {
-      "image": "img_0075.jpg",
-      "dist_from_optical_center_px": 213.0,
-      "mae_raw_mm": 2.435,
-      "mae_undistorted_mm": 0.73,
-      "error_delta_mm": 1.705,
-      "improvement_pct": 70.0
     },
     {
       "image": "img_0076.jpg",
@@ -54,14 +46,6 @@
       "improvement_pct": 37.1
     },
     {
-      "image": "img_0079.jpg",
-      "dist_from_optical_center_px": 299.6,
-      "mae_raw_mm": 3.465,
-      "mae_undistorted_mm": 0.975,
-      "error_delta_mm": 2.49,
-      "improvement_pct": 71.9
-    },
-    {
       "image": "img_0080.jpg",
       "dist_from_optical_center_px": 425.7,
       "mae_raw_mm": 2.685,
@@ -84,14 +68,6 @@
       "mae_undistorted_mm": 3.42,
       "error_delta_mm": 1.18,
       "improvement_pct": 25.7
-    },
-    {
-      "image": "img_0071.jpg",
-      "dist_from_optical_center_px": 266.1,
-      "mae_raw_mm": 2.225,
-      "mae_undistorted_mm": 0.45,
-      "error_delta_mm": 1.775,
-      "improvement_pct": 79.8
     },
     {
       "image": "img_0072.jpg",
