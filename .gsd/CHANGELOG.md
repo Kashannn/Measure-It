@@ -4,6 +4,25 @@ All notable changes, commits, experiments, and architectural transitions for **M
 
 ---
 
+## [0.3.0] - 2026-11-04 (Phase 2: Dataset Acquisition, Masking & Audit Complete)
+
+### Added
+- **Dataset Preprocessing & Generation Engine (`dataset/`)**:
+  - `dataset/config.py`: Dataclass specifying ground-truth object dimensions ($54.0 \times 85.5\text{ mm}$), ArUco marker specs ($50.0 \times 50.0\text{ mm}$, `DICT_4X4_50`), and input resolutions.
+  - `dataset/preprocess.py`: Pinhole camera matrix undistortion module ensuring rectilinear geometry prior to annotation.
+  - `dataset/generator.py`: High-fidelity physical metrology scene generator producing 80 pairs of $1920 \times 1080$ images and lossless PNG binary masks with varied lighting, surfaces, orientations, and scales.
+  - `dataset/verify_dataset.py`: Comprehensive audit tool verifying split consistency (56 train, 16 val, 8 test), mutual exclusivity (zero leakage), mask binary validity, and geometric aspect ratios.
+  - `dataset/loader.py`: Production PyTorch `MetrologyDataset` integrated with Albumentations augmentations (geometric and photometric) and DataLoader factories.
+- **Dataset Artifacts**:
+  - `dataset/images/`: 80 images (`img_0001.jpg` to `img_0080.jpg`).
+  - `dataset/labels/`: 80 binary masks (`img_0001.png` to `img_0080.png`).
+  - `dataset/annotations.json`: Structured metadata containing bounding boxes, centers, and scales.
+  - `dataset/diagnostics/sample_inspection_overlay.png`: Visual proof showing object contour and ArUco detection.
+  - `dataset/diagnostics/dataset_distribution.png`: Foreground pixel area and aspect ratio histograms.
+- **Checklist**: Updated `docs/Definition_of_Done.md` and `.gsd/STATE.md` with verified dataset metrics.
+
+---
+
 ## [0.2.0] - 2026-11-04 (Phase 1: Camera Calibration & Optical Undistortion Complete)
 
 ### Added

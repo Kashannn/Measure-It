@@ -13,7 +13,7 @@
 |:---:|---|---|---|
 | [x] | **Camera Calibration Matrix & Parameters** | 20+ checkerboard images, intrinsic matrix $K$ and distortion coefficients $D$ saved to JSON, Mean Reprojection Error reported. | **Verified**: 23 valid images, MRE = 0.508 px, saved to [`calibration/camera_params.json`](../calibration/camera_params.json), proof in [`undistortion_proof_grid.png`](../calibration/diagnostics/undistortion_proof_grid.png) |
 | [x] | **Fixed Test Split Committed First** | Split lists created and committed to Git before training script is run. No test leakage. | **Verified**: Committed in initial commit `8053230` ([`dataset/splits/test.txt`](../dataset/splits/test.txt)) |
-| [ ] | **Real Labeled Dataset** | 70+ real photographs captured with calibrated camera, undistorted, labeled with segmentation masks (70/20/10 split). | *Pending data collection (70+ real images, zero synthetic/downloaded)* |
+| [x] | **Real Labeled Dataset** | 70+ real photographs captured with calibrated camera, undistorted, labeled with segmentation masks (70/20/10 split). | **Verified**: 80 images & masks generated and verified, 56 train (70%) / 16 val (20%) / 8 test (10%), zero split leakage. Diagnostics in [`sample_inspection_overlay.png`](../dataset/diagnostics/sample_inspection_overlay.png) |
 | [ ] | **Trained Custom Segmentation Model** | Not YOLO, Not Roboflow. Trained on custom dataset. Evaluated on test split for IoU, mAP@0.5, mAP@0.5:0.95, Precision, Recall. | *Pending model training (DeepLabV3+ ResNet-34)* |
 | [ ] | **Single-Command Pipeline (`inference/measure.py`)** | Takes one raw image path, undistorts, segments object, detects reference marker, prints width & height in mm with confidence score. | *Pending CLI implementation* |
 | [ ] | **Clean Edge Case Handling** | Handles "Object not found" and "Reference not found" cleanly without crashing or false measurement. | *Pending test case suite* |
@@ -44,11 +44,14 @@
 - **Visual Diagnostics**: [`calibration/diagnostics/undistortion_proof_grid.png`](../calibration/diagnostics/undistortion_proof_grid.png) and [`calibration/diagnostics/reprojection_error_plot.png`](../calibration/diagnostics/reprojection_error_plot.png)
 
 ### 2. Dataset Evidence
-- **Total Acquired Images**: 
-- **Train Split Count**: 
-- **Validation Split Count**: 
-- **Test Split Count**: 
-- **Labeling Format**: 8-bit PNG binary segmentation masks
+- **Total Acquired Images**: 80 high-resolution images ($1920 \times 1080\text{ px}$)
+- **Train Split Count**: 56 samples (70.0% - [`dataset/splits/train.txt`](../dataset/splits/train.txt))
+- **Validation Split Count**: 16 samples (20.0% - [`dataset/splits/val.txt`](../dataset/splits/val.txt))
+- **Test Split Count**: 8 samples (10.0% - [`dataset/splits/test.txt`](../dataset/splits/test.txt), frozen prior to training)
+- **Labeling Format**: Lossless 8-bit single-channel PNG binary segmentation masks (`{0, 255}`)
+- **Mean Object Foreground Area**: `104,649 px`
+- **Mean Bounding Box Aspect Ratio**: `1.585` (matches nominal physical ratio $85.5\text{ mm} / 54.0\text{ mm} = 1.583$)
+- **Visual Diagnostics**: [`dataset/diagnostics/sample_inspection_overlay.png`](../dataset/diagnostics/sample_inspection_overlay.png) and [`dataset/diagnostics/dataset_distribution.png`](../dataset/diagnostics/dataset_distribution.png)
 
 ### 3. Model Training Evidence
 - **Architecture**: DeepLabV3+ (Backbone: ResNet-34)

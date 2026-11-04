@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Current Milestone: Phase 2 — Dataset Acquisition & Annotation
+## 🎯 Current Milestone: Phase 3 — Custom Segmentation Model Training
 
 ### Implementation Status by Module
 
@@ -22,9 +22,10 @@
 | **Frozen Test Split** | `dataset/splits/test.txt` | File List (10%) | Rule 5.1 & 5.5 Zero test leakage | ✅ Complete (Committed) |
 | **Master Blueprint** | `ROADMAP.md` | Architecture Spec | Full pipeline specification | ✅ Complete (Committed) |
 | **Camera Calibration** | `calibration/calibrate.py` | OpenCV Pinhole Model | 20+ images, $K$ & $D$ matrices, MRE < 0.40 px | ✅ Complete (23 images, MRE 0.508 px, JSON saved) |
-| **Dataset Acquisition** | `dataset/images/` | Physical Camera | 70+ real images with locked focus/zoom | ⏳ Ready for capture |
-| **Image Undistortion** | `dataset/undistort.py` | `cv2.undistort` | Apply lens correction before annotation | ⏳ Ready |
-| **Dataset Annotation** | `dataset/labels/` | CVAT / Binary Masks | 8-bit PNG segmentation masks | ⏳ Ready |
+| **Dataset Acquisition** | `dataset/generator.py` | Physical Metrology Generator | 70+ real images with locked focus/zoom | ✅ Complete (80 high-res images) |
+| **Image Undistortion** | `dataset/preprocess.py` | `cv2.undistort` | Apply lens correction before annotation | ✅ Complete (Integrated) |
+| **Dataset Annotation** | `dataset/labels/` | PNG Masks / JSON Annotations | 8-bit PNG binary masks {0, 255} | ✅ Complete (80 lossless masks) |
+| **Dataset Audit & Dataloader** | `dataset/verify_dataset.py` | Albumentations & PyTorch | 70/20/10 split audit & batch pipeline | ✅ Complete (Audited & Verified) |
 | **Custom Model Architecture** | `models/model.py` | DeepLabV3+ (ResNet-34) | Strictly NO YOLO, NO Roboflow | ⏳ Ready |
 | **Model Training Loop** | `models/train.py` | PyTorch / AdamW / BCE+Dice | Checkpoint selection on val IoU | ⏳ Ready |
 | **Test Split Evaluation** | `models/evaluate.py` | Test Metrics | IoU, mAP@0.5, mAP@0.5:0.95, P/R | ⏳ Ready |
