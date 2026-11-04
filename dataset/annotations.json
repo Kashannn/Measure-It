@@ -7,15 +7,15 @@
       85.5
     ],
     "object_center_px": [
-      861,
-      610
+      639,
+      636
     ],
     "object_rotation_deg": 70.58,
     "aruco_center_px": [
-      1197,
-      659
+      1570,
+      441
     ],
-    "aruco_rotation_deg": 70.48
+    "aruco_rotation_deg": -6.08
   },
   "img_0002.jpg": {
     "seed": 1002,
@@ -25,15 +25,15 @@
       85.5
     ],
     "object_center_px": [
-      923,
-      498
+      701,
+      524
     ],
     "object_rotation_deg": 149.82,
     "aruco_center_px": [
-      1071,
-      830
+      1448,
+      538
     ],
-    "aruco_rotation_deg": 150.45
+    "aruco_rotation_deg": -6.34
   },
   "img_0003.jpg": {
     "seed": 1003,
@@ -43,15 +43,15 @@
       85.5
     ],
     "object_center_px": [
-      1328,
-      720
+      775,
+      494
     ],
-    "object_rotation_deg": 90.54,
+    "object_rotation_deg": 6.07,
     "aruco_center_px": [
-      1118,
-      835
+      1382,
+      666
     ],
-    "aruco_rotation_deg": 10.18
+    "aruco_rotation_deg": 7.9
   },
   "img_0004.jpg": {
     "seed": 1004,
@@ -61,15 +61,15 @@
       85.5
     ],
     "object_center_px": [
-      703,
-      649
+      481,
+      675
     ],
     "object_rotation_deg": 268.74,
     "aruco_center_px": [
-      330,
-      501
+      1499,
+      364
     ],
-    "aruco_rotation_deg": 28.97
+    "aruco_rotation_deg": 1.2
   },
   "img_0005.jpg": {
     "seed": 1005,
@@ -79,15 +79,15 @@
       85.5
     ],
     "object_center_px": [
-      947,
-      413
+      725,
+      439
     ],
     "object_rotation_deg": 169.37,
     "aruco_center_px": [
-      1127,
-      767
+      1432,
+      721
     ],
-    "aruco_rotation_deg": 76.41
+    "aruco_rotation_deg": -6.5
   },
   "img_0006.jpg": {
     "seed": 1006,
@@ -97,15 +97,15 @@
       85.5
     ],
     "object_center_px": [
-      1155,
-      478
+      933,
+      504
     ],
     "object_rotation_deg": 231.31,
     "aruco_center_px": [
-      1131,
-      254
+      1350,
+      665
     ],
-    "aruco_rotation_deg": 259.65
+    "aruco_rotation_deg": 2.94
   },
   "img_0007.jpg": {
     "seed": 1007,
@@ -115,15 +115,15 @@
       85.5
     ],
     "object_center_px": [
-      1175,
-      715
+      841,
+      403
     ],
-    "object_rotation_deg": 2.2,
+    "object_rotation_deg": 163.94,
     "aruco_center_px": [
-      803,
-      635
+      1627,
+      662
     ],
-    "aruco_rotation_deg": 95.24
+    "aruco_rotation_deg": -9.61
   },
   "img_0008.jpg": {
     "seed": 1008,
@@ -133,15 +133,15 @@
       85.5
     ],
     "object_center_px": [
-      817,
-      519
+      595,
+      545
     ],
     "object_rotation_deg": 91.77,
     "aruco_center_px": [
-      605,
-      818
+      1428,
+      453
     ],
-    "aruco_rotation_deg": 36.15
+    "aruco_rotation_deg": -7.99
   },
   "img_0009.jpg": {
     "seed": 1009,
@@ -151,15 +151,15 @@
       85.5
     ],
     "object_center_px": [
-      680,
-      419
+      458,
+      445
     ],
     "object_rotation_deg": 108.36,
     "aruco_center_px": [
-      769,
-      246
+      1606,
+      452
     ],
-    "aruco_rotation_deg": 197.37
+    "aruco_rotation_deg": 5.9
   },
   "img_0010.jpg": {
     "seed": 1010,
@@ -169,15 +169,15 @@
       85.5
     ],
     "object_center_px": [
-      874,
-      342
+      652,
+      368
     ],
     "object_rotation_deg": 26.17,
     "aruco_center_px": [
-      625,
-      522
+      1495,
+      372
     ],
-    "aruco_rotation_deg": 150.52
+    "aruco_rotation_deg": -2.0
   },
   "img_0011.jpg": {
     "seed": 1011,
@@ -187,15 +187,15 @@
       85.5
     ],
     "object_center_px": [
-      980,
-      369
+      758,
+      395
     ],
     "object_rotation_deg": 225.54,
     "aruco_center_px": [
-      1085,
-      249
+      1422,
+      434
     ],
-    "aruco_rotation_deg": 172.04
+    "aruco_rotation_deg": 6.16
   },
   "img_0012.jpg": {
     "seed": 1012,
@@ -205,15 +205,15 @@
       85.5
     ],
     "object_center_px": [
-      723,
-      505
+      757,
+      401
     ],
-    "object_rotation_deg": 287.02,
+    "object_rotation_deg": 90.85,
     "aruco_center_px": [
-      424,
-      381
+      1642,
+      618
     ],
-    "aruco_rotation_deg": 232.31
+    "aruco_rotation_deg": -3.86
   },
   "img_0013.jpg": {
     "seed": 1013,
@@ -223,15 +223,15 @@
       85.5
     ],
     "object_center_px": [
-      1046,
-      402
+      824,
+      428
     ],
     "object_rotation_deg": 298.41,
     "aruco_center_px": [
-      1436,
-      409
+      1444,
+      625
     ],
-    "aruco_rotation_deg": 254.92
+    "aruco_rotation_deg": -9.94
   },
   "img_0014.jpg": {
     "seed": 1014,
@@ -241,15 +241,15 @@
       85.5
     ],
     "object_center_px": [
-      949,
-      378
+      716,
+      619
     ],
-    "object_rotation_deg": 32.74,
+    "object_rotation_deg": 119.1,
     "aruco_center_px": [
-      1297,
-      224
+      1345,
+      743
     ],
-    "aruco_rotation_deg": 270.94
+    "aruco_rotation_deg": 3.74
   },
   "img_0015.jpg": {
     "seed": 1015,
@@ -259,15 +259,15 @@
       85.5
     ],
     "object_center_px": [
-      1180,
-      425
+      551,
+      552
     ],
-    "object_rotation_deg": 222.36,
+    "object_rotation_deg": 7.8,
     "aruco_center_px": [
-      1338,
-      247
+      1379,
+      379
     ],
-    "aruco_rotation_deg": 311.92
+    "aruco_rotation_deg": 3.2
   },
   "img_0016.jpg": {
     "seed": 1016,
@@ -277,15 +277,15 @@
       85.5
     ],
     "object_center_px": [
-      1259,
-      433
+      525,
+      459
     ],
     "object_rotation_deg": 281.81,
     "aruco_center_px": [
-      1144,
-      260
+      1627,
+      412
     ],
-    "aruco_rotation_deg": 119.66
+    "aruco_rotation_deg": 7.5
   },
   "img_0017.jpg": {
     "seed": 1017,
@@ -295,15 +295,15 @@
       85.5
     ],
     "object_center_px": [
-      1198,
-      461
+      464,
+      487
     ],
     "object_rotation_deg": 170.29,
     "aruco_center_px": [
-      1274,
-      216
+      1634,
+      352
     ],
-    "aruco_rotation_deg": 184.54
+    "aruco_rotation_deg": 5.66
   },
   "img_0018.jpg": {
     "seed": 1018,
@@ -313,15 +313,15 @@
       85.5
     ],
     "object_center_px": [
-      747,
-      681
+      525,
+      707
     ],
     "object_rotation_deg": 270.6,
     "aruco_center_px": [
-      938,
-      866
+      1362,
+      648
     ],
-    "aruco_rotation_deg": 179.87
+    "aruco_rotation_deg": -7.24
   },
   "img_0019.jpg": {
     "seed": 1019,
@@ -331,15 +331,15 @@
       85.5
     ],
     "object_center_px": [
-      880,
-      523
+      658,
+      549
     ],
     "object_rotation_deg": 2.09,
     "aruco_center_px": [
-      966,
-      229
+      1633,
+      397
     ],
-    "aruco_rotation_deg": 74.17
+    "aruco_rotation_deg": 7.51
   },
   "img_0020.jpg": {
     "seed": 1020,
@@ -349,15 +349,15 @@
       85.5
     ],
     "object_center_px": [
-      1069,
-      553
+      795,
+      747
     ],
-    "object_rotation_deg": 190.5,
+    "object_rotation_deg": 248.16,
     "aruco_center_px": [
-      1379,
-      285
+      1636,
+      563
     ],
-    "aruco_rotation_deg": 112.06
+    "aruco_rotation_deg": -9.51
   },
   "img_0021.jpg": {
     "seed": 1021,
@@ -367,15 +367,15 @@
       85.5
     ],
     "object_center_px": [
-      833,
-      459
+      867,
+      511
     ],
-    "object_rotation_deg": 291.97,
+    "object_rotation_deg": 258.68,
     "aruco_center_px": [
-      786,
-      828
+      1561,
+      467
     ],
-    "aruco_rotation_deg": 295.31
+    "aruco_rotation_deg": 7.49
   },
   "img_0022.jpg": {
     "seed": 1022,
@@ -385,15 +385,15 @@
       85.5
     ],
     "object_center_px": [
-      1179,
-      519
+      645,
+      470
     ],
-    "object_rotation_deg": 116.52,
+    "object_rotation_deg": 313.97,
     "aruco_center_px": [
-      1483,
-      559
+      1464,
+      374
     ],
-    "aruco_rotation_deg": 312.89
+    "aruco_rotation_deg": -2.97
   },
   "img_0023.jpg": {
     "seed": 1023,
@@ -403,15 +403,15 @@
       85.5
     ],
     "object_center_px": [
-      891,
-      512
+      669,
+      538
     ],
     "object_rotation_deg": 183.22,
     "aruco_center_px": [
-      1169,
-      583
+      1630,
+      374
     ],
-    "aruco_rotation_deg": 264.0
+    "aruco_rotation_deg": -0.51
   },
   "img_0024.jpg": {
     "seed": 1024,
@@ -421,15 +421,15 @@
       85.5
     ],
     "object_center_px": [
-      1281,
-      425
+      547,
+      451
     ],
     "object_rotation_deg": 155.73,
     "aruco_center_px": [
-      1535,
-      681
+      1508,
+      683
     ],
-    "aruco_rotation_deg": 210.97
+    "aruco_rotation_deg": -7.49
   },
   "img_0025.jpg": {
     "seed": 1025,
@@ -439,15 +439,15 @@
       85.5
     ],
     "object_center_px": [
-      1301,
-      569
+      567,
+      595
     ],
     "object_rotation_deg": 121.88,
     "aruco_center_px": [
-      1283,
-      834
+      1305,
+      661
     ],
-    "aruco_rotation_deg": 232.43
+    "aruco_rotation_deg": -4.84
   },
   "img_0026.jpg": {
     "seed": 1026,
@@ -457,15 +457,15 @@
       85.5
     ],
     "object_center_px": [
-      1082,
-      536
+      860,
+      562
     ],
     "object_rotation_deg": 344.09,
     "aruco_center_px": [
-      845,
-      730
+      1374,
+      608
     ],
-    "aruco_rotation_deg": 102.81
+    "aruco_rotation_deg": -2.7
   },
   "img_0027.jpg": {
     "seed": 1027,
@@ -475,15 +475,15 @@
       85.5
     ],
     "object_center_px": [
-      1147,
-      609
+      925,
+      635
     ],
     "object_rotation_deg": 43.26,
     "aruco_center_px": [
-      1069,
-      864
+      1349,
+      667
     ],
-    "aruco_rotation_deg": 314.56
+    "aruco_rotation_deg": -0.16
   },
   "img_0028.jpg": {
     "seed": 1028,
@@ -493,15 +493,15 @@
       85.5
     ],
     "object_center_px": [
-      1427,
-      608
+      693,
+      634
     ],
     "object_rotation_deg": 217.57,
     "aruco_center_px": [
-      1177,
-      735
+      1647,
+      686
     ],
-    "aruco_rotation_deg": 126.53
+    "aruco_rotation_deg": -2.97
   },
   "img_0029.jpg": {
     "seed": 1029,
@@ -511,15 +511,15 @@
       85.5
     ],
     "object_center_px": [
-      864,
-      695
+      642,
+      721
     ],
     "object_rotation_deg": 211.94,
     "aruco_center_px": [
-      1158,
-      868
+      1598,
+      640
     ],
-    "aruco_rotation_deg": 61.27
+    "aruco_rotation_deg": 7.83
   },
   "img_0030.jpg": {
     "seed": 1030,
@@ -529,15 +529,15 @@
       85.5
     ],
     "object_center_px": [
-      1431,
-      629
+      697,
+      655
     ],
     "object_rotation_deg": 80.2,
     "aruco_center_px": [
-      1683,
-      534
+      1356,
+      375
     ],
-    "aruco_rotation_deg": 278.65
+    "aruco_rotation_deg": 9.17
   },
   "img_0031.jpg": {
     "seed": 1031,
@@ -547,15 +547,15 @@
       85.5
     ],
     "object_center_px": [
-      799,
-      484
+      577,
+      510
     ],
     "object_rotation_deg": 116.93,
     "aruco_center_px": [
-      843,
-      210
+      1582,
+      441
     ],
-    "aruco_rotation_deg": 344.79
+    "aruco_rotation_deg": 5.63
   },
   "img_0032.jpg": {
     "seed": 1032,
@@ -565,15 +565,15 @@
       85.5
     ],
     "object_center_px": [
-      1239,
-      482
+      505,
+      508
     ],
     "object_rotation_deg": 12.81,
     "aruco_center_px": [
-      1456,
-      240
+      1532,
+      657
     ],
-    "aruco_rotation_deg": 96.72
+    "aruco_rotation_deg": 7.33
   },
   "img_0033.jpg": {
     "seed": 1033,
@@ -583,15 +583,15 @@
       85.5
     ],
     "object_center_px": [
-      1071,
-      685
+      756,
+      749
     ],
-    "object_rotation_deg": 315.54,
+    "object_rotation_deg": 186.13,
     "aruco_center_px": [
-      755,
-      684
+      1482,
+      748
     ],
-    "aruco_rotation_deg": 290.12
+    "aruco_rotation_deg": 0.0
   },
   "img_0034.jpg": {
     "seed": 1034,
@@ -601,15 +601,15 @@
       85.5
     ],
     "object_center_px": [
-      1213,
-      496
+      479,
+      522
     ],
     "object_rotation_deg": 252.47,
     "aruco_center_px": [
-      1330,
-      788
+      1554,
+      417
     ],
-    "aruco_rotation_deg": 314.85
+    "aruco_rotation_deg": -6.21
   },
   "img_0035.jpg": {
     "seed": 1035,
@@ -619,15 +619,15 @@
       85.5
     ],
     "object_center_px": [
-      1252,
-      516
+      518,
+      542
     ],
     "object_rotation_deg": 182.39,
     "aruco_center_px": [
-      1582,
-      616
+      1512,
+      367
     ],
-    "aruco_rotation_deg": 195.31
+    "aruco_rotation_deg": -9.06
   },
   "img_0036.jpg": {
     "seed": 1036,
@@ -637,15 +637,15 @@
       85.5
     ],
     "object_center_px": [
-      1252,
-      444
+      786,
+      418
     ],
-    "object_rotation_deg": 186.06,
+    "object_rotation_deg": 205.48,
     "aruco_center_px": [
-      1124,
-      706
+      1456,
+      525
     ],
-    "aruco_rotation_deg": 349.27
+    "aruco_rotation_deg": 4.8
   },
   "img_0037.jpg": {
     "seed": 1037,
@@ -655,15 +655,15 @@
       85.5
     ],
     "object_center_px": [
-      863,
-      542
+      880,
+      541
     ],
-    "object_rotation_deg": 304.02,
+    "object_rotation_deg": 156.54,
     "aruco_center_px": [
-      839,
-      835
+      1601,
+      367
     ],
-    "aruco_rotation_deg": 199.13
+    "aruco_rotation_deg": 5.89
   },
   "img_0038.jpg": {
     "seed": 1038,
@@ -673,15 +673,15 @@
       85.5
     ],
     "object_center_px": [
-      1060,
-      524
+      838,
+      550
     ],
     "object_rotation_deg": 262.92,
     "aruco_center_px": [
-      1393,
-      338
+      1475,
+      580
     ],
-    "aruco_rotation_deg": 7.43
+    "aruco_rotation_deg": 8.38
   },
   "img_0039.jpg": {
     "seed": 1039,
@@ -691,15 +691,15 @@
       85.5
     ],
     "object_center_px": [
-      906,
-      618
+      684,
+      644
     ],
     "object_rotation_deg": 290.24,
     "aruco_center_px": [
-      1163,
-      843
+      1499,
+      558
     ],
-    "aruco_rotation_deg": 293.71
+    "aruco_rotation_deg": 8.6
   },
   "img_0040.jpg": {
     "seed": 1040,
@@ -709,15 +709,15 @@
       85.5
     ],
     "object_center_px": [
-      1295,
-      577
+      561,
+      603
     ],
     "object_rotation_deg": 315.76,
     "aruco_center_px": [
-      1369,
-      259
+      1461,
+      356
     ],
-    "aruco_rotation_deg": 124.82
+    "aruco_rotation_deg": 5.63
   },
   "img_0041.jpg": {
     "seed": 1041,
@@ -727,15 +727,15 @@
       85.5
     ],
     "object_center_px": [
-      860,
-      451
+      638,
+      477
     ],
     "object_rotation_deg": 105.22,
     "aruco_center_px": [
-      1056,
-      211
+      1496,
+      562
     ],
-    "aruco_rotation_deg": 145.66
+    "aruco_rotation_deg": 6.56
   },
   "img_0042.jpg": {
     "seed": 1042,
@@ -745,15 +745,15 @@
       85.5
     ],
     "object_center_px": [
-      1114,
-      514
+      892,
+      540
     ],
     "object_rotation_deg": 295.4,
     "aruco_center_px": [
-      1401,
-      420
+      1329,
+      738
     ],
-    "aruco_rotation_deg": 121.11
+    "aruco_rotation_deg": 9.0
   },
   "img_0043.jpg": {
     "seed": 1043,
@@ -763,15 +763,15 @@
       85.5
     ],
     "object_center_px": [
-      1197,
-      662
+      463,
+      688
     ],
     "object_rotation_deg": 12.75,
     "aruco_center_px": [
-      1581,
-      808
+      1316,
+      525
     ],
-    "aruco_rotation_deg": 310.38
+    "aruco_rotation_deg": -8.84
   },
   "img_0044.jpg": {
     "seed": 1044,
@@ -781,15 +781,15 @@
       85.5
     ],
     "object_center_px": [
-      1321,
-      515
+      937,
+      487
     ],
-    "object_rotation_deg": 223.93,
+    "object_rotation_deg": 243.39,
     "aruco_center_px": [
-      1221,
-      797
+      1421,
+      499
     ],
-    "aruco_rotation_deg": 167.23
+    "aruco_rotation_deg": -2.48
   },
   "img_0045.jpg": {
     "seed": 1045,
@@ -799,15 +799,15 @@
       85.5
     ],
     "object_center_px": [
-      1056,
-      647
+      834,
+      673
     ],
     "object_rotation_deg": 31.31,
     "aruco_center_px": [
-      1408,
-      635
+      1443,
+      542
     ],
-    "aruco_rotation_deg": 91.23
+    "aruco_rotation_deg": -4.93
   },
   "img_0046.jpg": {
     "seed": 1046,
@@ -817,15 +817,15 @@
       85.5
     ],
     "object_center_px": [
-      1145,
-      428
+      923,
+      454
     ],
     "object_rotation_deg": 86.93,
     "aruco_center_px": [
-      1530,
-      301
+      1572,
+      475
     ],
-    "aruco_rotation_deg": 193.5
+    "aruco_rotation_deg": -9.06
   },
   "img_0047.jpg": {
     "seed": 1047,
@@ -835,15 +835,15 @@
       85.5
     ],
     "object_center_px": [
-      708,
-      599
+      860,
+      386
     ],
-    "object_rotation_deg": 179.47,
+    "object_rotation_deg": 300.55,
     "aruco_center_px": [
-      407,
-      348
+      1492,
+      575
     ],
-    "aruco_rotation_deg": 0.46
+    "aruco_rotation_deg": 2.21
   },
   "img_0048.jpg": {
     "seed": 1048,
@@ -853,15 +853,15 @@
       85.5
     ],
     "object_center_px": [
-      1001,
-      432
+      835,
+      679
     ],
-    "object_rotation_deg": 69.49,
+    "object_rotation_deg": 108.3,
     "aruco_center_px": [
-      1125,
-      243
+      1491,
+      595
     ],
-    "aruco_rotation_deg": 108.88
+    "aruco_rotation_deg": 4.74
   },
   "img_0049.jpg": {
     "seed": 1049,
@@ -871,15 +871,15 @@
       85.5
     ],
     "object_center_px": [
-      915,
-      646
+      870,
+      657
     ],
-    "object_rotation_deg": 125.76,
+    "object_rotation_deg": 144.93,
     "aruco_center_px": [
-      1101,
-      825
+      1606,
+      533
     ],
-    "aruco_rotation_deg": 160.01
+    "aruco_rotation_deg": 2.86
   },
   "img_0050.jpg": {
     "seed": 1050,
@@ -889,15 +889,15 @@
       85.5
     ],
     "object_center_px": [
-      1103,
-      733
+      881,
+      608
     ],
-    "object_rotation_deg": 27.99,
+    "object_rotation_deg": 161.19,
     "aruco_center_px": [
-      963,
-      442
+      1533,
+      364
     ],
-    "aruco_rotation_deg": 97.27
+    "aruco_rotation_deg": 2.09
   },
   "img_0051.jpg": {
     "seed": 1051,
@@ -907,15 +907,15 @@
       85.5
     ],
     "object_center_px": [
-      1245,
-      521
+      511,
+      547
     ],
     "object_rotation_deg": 72.48,
     "aruco_center_px": [
-      897,
-      543
+      1310,
+      488
     ],
-    "aruco_rotation_deg": 339.53
+    "aruco_rotation_deg": -0.21
   },
   "img_0052.jpg": {
     "seed": 1052,
@@ -925,15 +925,15 @@
       85.5
     ],
     "object_center_px": [
-      712,
-      417
+      940,
+      390
     ],
-    "object_rotation_deg": 29.26,
+    "object_rotation_deg": 232.59,
     "aruco_center_px": [
-      870,
-      249
+      1463,
+      496
     ],
-    "aruco_rotation_deg": 86.3
+    "aruco_rotation_deg": 4.97
   },
   "img_0053.jpg": {
     "seed": 1053,
@@ -943,15 +943,15 @@
       85.5
     ],
     "object_center_px": [
-      716,
-      497
+      494,
+      523
     ],
     "object_rotation_deg": 233.28,
     "aruco_center_px": [
-      955,
-      261
+      1318,
+      393
     ],
-    "aruco_rotation_deg": 89.61
+    "aruco_rotation_deg": -9.33
   },
   "img_0054.jpg": {
     "seed": 1054,
@@ -961,15 +961,15 @@
       85.5
     ],
     "object_center_px": [
-      1403,
-      362
+      669,
+      388
     ],
     "object_rotation_deg": 267.4,
     "aruco_center_px": [
-      1109,
-      315
+      1593,
+      478
     ],
-    "aruco_rotation_deg": 277.57
+    "aruco_rotation_deg": 5.42
   },
   "img_0055.jpg": {
     "seed": 1055,
@@ -979,15 +979,15 @@
       85.5
     ],
     "object_center_px": [
-      1266,
-      364
+      532,
+      390
     ],
     "object_rotation_deg": 311.22,
     "aruco_center_px": [
-      1511,
-      702
+      1599,
+      660
     ],
-    "aruco_rotation_deg": 3.91
+    "aruco_rotation_deg": -9.26
   },
   "img_0056.jpg": {
     "seed": 1056,
@@ -997,15 +997,15 @@
       85.5
     ],
     "object_center_px": [
-      704,
-      671
+      482,
+      697
     ],
     "object_rotation_deg": 73.64,
     "aruco_center_px": [
-      965,
-      414
+      1475,
+      630
     ],
-    "aruco_rotation_deg": 40.4
+    "aruco_rotation_deg": 8.28
   },
   "img_0057.jpg": {
     "seed": 1057,
@@ -1015,15 +1015,15 @@
       85.5
     ],
     "object_center_px": [
-      697,
-      448
+      475,
+      474
     ],
     "object_rotation_deg": 70.96,
     "aruco_center_px": [
-      1044,
-      230
+      1307,
+      456
     ],
-    "aruco_rotation_deg": 332.16
+    "aruco_rotation_deg": 8.13
   },
   "img_0058.jpg": {
     "seed": 1058,
@@ -1033,15 +1033,15 @@
       85.5
     ],
     "object_center_px": [
-      1092,
-      634
+      870,
+      660
     ],
     "object_rotation_deg": 353.94,
     "aruco_center_px": [
-      1094,
-      259
+      1519,
+      746
     ],
-    "aruco_rotation_deg": 235.71
+    "aruco_rotation_deg": 5.02
   },
   "img_0059.jpg": {
     "seed": 1059,
@@ -1051,15 +1051,15 @@
       85.5
     ],
     "object_center_px": [
-      829,
-      594
+      607,
+      620
     ],
     "object_rotation_deg": 92.65,
     "aruco_center_px": [
-      1009,
-      848
+      1551,
+      654
     ],
-    "aruco_rotation_deg": 339.44
+    "aruco_rotation_deg": 3.66
   },
   "img_0060.jpg": {
     "seed": 1060,
@@ -1069,15 +1069,15 @@
       85.5
     ],
     "object_center_px": [
-      1295,
-      609
+      561,
+      635
     ],
     "object_rotation_deg": 181.41,
     "aruco_center_px": [
-      1592,
-      837
+      1411,
+      365
     ],
-    "aruco_rotation_deg": 357.54
+    "aruco_rotation_deg": -7.81
   },
   "img_0061.jpg": {
     "seed": 1061,
@@ -1087,15 +1087,15 @@
       85.5
     ],
     "object_center_px": [
-      1289,
-      716
+      555,
+      742
     ],
     "object_rotation_deg": 97.39,
     "aruco_center_px": [
-      1523,
-      481
+      1349,
+      653
     ],
-    "aruco_rotation_deg": 59.99
+    "aruco_rotation_deg": 7.5
   },
   "img_0062.jpg": {
     "seed": 1062,
@@ -1105,15 +1105,15 @@
       85.5
     ],
     "object_center_px": [
-      857,
-      389
+      816,
+      535
     ],
-    "object_rotation_deg": 197.14,
+    "object_rotation_deg": 215.86,
     "aruco_center_px": [
-      616,
-      679
+      1605,
+      453
     ],
-    "aruco_rotation_deg": 157.07
+    "aruco_rotation_deg": -5.59
   },
   "img_0063.jpg": {
     "seed": 1063,
@@ -1123,15 +1123,15 @@
       85.5
     ],
     "object_center_px": [
-      853,
-      364
+      631,
+      390
     ],
     "object_rotation_deg": 101.52,
     "aruco_center_px": [
-      907,
-      659
+      1429,
+      473
     ],
-    "aruco_rotation_deg": 29.07
+    "aruco_rotation_deg": -5.1
   },
   "img_0064.jpg": {
     "seed": 1064,
@@ -1141,15 +1141,15 @@
       85.5
     ],
     "object_center_px": [
-      1176,
-      545
+      671,
+      515
     ],
-    "object_rotation_deg": 275.71,
+    "object_rotation_deg": 282.53,
     "aruco_center_px": [
-      1047,
-      851
+      1472,
+      672
     ],
-    "aruco_rotation_deg": 206.66
+    "aruco_rotation_deg": 1.48
   },
   "img_0065.jpg": {
     "seed": 1065,
@@ -1159,15 +1159,15 @@
       85.5
     ],
     "object_center_px": [
-      983,
-      465
+      761,
+      491
     ],
     "object_rotation_deg": 77.34,
     "aruco_center_px": [
-      673,
-      546
+      1520,
+      522
     ],
-    "aruco_rotation_deg": 275.39
+    "aruco_rotation_deg": 5.3
   },
   "img_0066.jpg": {
     "seed": 1066,
@@ -1177,15 +1177,15 @@
       85.5
     ],
     "object_center_px": [
-      811,
-      663
+      589,
+      689
     ],
     "object_rotation_deg": 117.41,
     "aruco_center_px": [
-      471,
-      586
+      1490,
+      563
     ],
-    "aruco_rotation_deg": 314.3
+    "aruco_rotation_deg": 6.62
   },
   "img_0067.jpg": {
     "seed": 1067,
@@ -1195,15 +1195,15 @@
       85.5
     ],
     "object_center_px": [
-      1367,
-      577
+      633,
+      603
     ],
     "object_rotation_deg": 22.88,
     "aruco_center_px": [
-      1094,
-      780
+      1330,
+      643
     ],
-    "aruco_rotation_deg": 128.38
+    "aruco_rotation_deg": -2.04
   },
   "img_0068.jpg": {
     "seed": 1068,
@@ -1213,15 +1213,15 @@
       85.5
     ],
     "object_center_px": [
-      777,
-      733
+      555,
+      571
     ],
-    "object_rotation_deg": 190.75,
+    "object_rotation_deg": 4.79,
     "aruco_center_px": [
-      594,
-      816
+      1632,
+      714
     ],
-    "aruco_rotation_deg": 259.29
+    "aruco_rotation_deg": 4.4
   },
   "img_0069.jpg": {
     "seed": 1069,
@@ -1231,15 +1231,15 @@
       85.5
     ],
     "object_center_px": [
-      1353,
-      512
+      619,
+      538
     ],
     "object_rotation_deg": 278.85,
     "aruco_center_px": [
-      1693,
-      465
+      1599,
+      531
     ],
-    "aruco_rotation_deg": 6.21
+    "aruco_rotation_deg": -6.93
   },
   "img_0070.jpg": {
     "seed": 1070,
@@ -1249,15 +1249,15 @@
       85.5
     ],
     "object_center_px": [
-      1245,
-      679
+      511,
+      705
     ],
     "object_rotation_deg": 73.32,
     "aruco_center_px": [
-      1216,
-      295
+      1488,
+      516
     ],
-    "aruco_rotation_deg": 335.11
+    "aruco_rotation_deg": 4.76
   },
   "img_0071.jpg": {
     "seed": 1071,
@@ -1267,15 +1267,15 @@
       85.5
     ],
     "object_center_px": [
-      1040,
-      368
+      818,
+      394
     ],
     "object_rotation_deg": 257.7,
     "aruco_center_px": [
-      833,
-      717
+      1638,
+      406
     ],
-    "aruco_rotation_deg": 65.35
+    "aruco_rotation_deg": -3.3
   },
   "img_0072.jpg": {
     "seed": 1072,
@@ -1285,15 +1285,15 @@
       85.5
     ],
     "object_center_px": [
-      967,
-      719
+      745,
+      745
     ],
     "object_rotation_deg": 241.15,
     "aruco_center_px": [
-      741,
-      826
+      1607,
+      561
     ],
-    "aruco_rotation_deg": 81.77
+    "aruco_rotation_deg": -5.46
   },
   "img_0073.jpg": {
     "seed": 1073,
@@ -1303,15 +1303,15 @@
       85.5
     ],
     "object_center_px": [
-      852,
-      550
+      783,
+      530
     ],
-    "object_rotation_deg": 2.31,
+    "object_rotation_deg": 193.16,
     "aruco_center_px": [
-      955,
-      852
+      1346,
+      636
     ],
-    "aruco_rotation_deg": 132.25
+    "aruco_rotation_deg": 2.96
   },
   "img_0074.jpg": {
     "seed": 1074,
@@ -1321,15 +1321,15 @@
       85.5
     ],
     "object_center_px": [
-      1102,
-      672
+      880,
+      698
     ],
     "object_rotation_deg": 251.98,
     "aruco_center_px": [
-      886,
-      312
+      1490,
+      370
     ],
-    "aruco_rotation_deg": 221.37
+    "aruco_rotation_deg": 3.28
   },
   "img_0075.jpg": {
     "seed": 1075,
@@ -1339,15 +1339,15 @@
       85.5
     ],
     "object_center_px": [
-      1063,
-      721
+      841,
+      747
     ],
     "object_rotation_deg": 126.67,
     "aruco_center_px": [
-      930,
-      828
+      1481,
+      534
     ],
-    "aruco_rotation_deg": 158.6
+    "aruco_rotation_deg": -3.8
   },
   "img_0076.jpg": {
     "seed": 1076,
@@ -1357,15 +1357,15 @@
       85.5
     ],
     "object_center_px": [
-      1029,
-      610
+      807,
+      636
     ],
     "object_rotation_deg": 17.75,
     "aruco_center_px": [
-      1326,
-      792
+      1313,
+      563
     ],
-    "aruco_rotation_deg": 204.33
+    "aruco_rotation_deg": -1.84
   },
   "img_0077.jpg": {
     "seed": 1077,
@@ -1375,15 +1375,15 @@
       85.5
     ],
     "object_center_px": [
-      944,
-      597
+      722,
+      623
     ],
     "object_rotation_deg": 236.59,
     "aruco_center_px": [
-      1209,
-      831
+      1585,
+      637
     ],
-    "aruco_rotation_deg": 85.19
+    "aruco_rotation_deg": 3.82
   },
   "img_0078.jpg": {
     "seed": 1078,
@@ -1393,15 +1393,15 @@
       85.5
     ],
     "object_center_px": [
-      1151,
-      698
+      929,
+      724
     ],
     "object_rotation_deg": 268.97,
     "aruco_center_px": [
-      1065,
-      856
+      1450,
+      582
     ],
-    "aruco_rotation_deg": 324.6
+    "aruco_rotation_deg": -4.09
   },
   "img_0079.jpg": {
     "seed": 1079,
@@ -1411,15 +1411,15 @@
       85.5
     ],
     "object_center_px": [
-      1193,
-      645
+      808,
+      359
     ],
-    "object_rotation_deg": 225.14,
+    "object_rotation_deg": 150.18,
     "aruco_center_px": [
-      797,
-      646
+      1603,
+      433
     ],
-    "aruco_rotation_deg": 254.46
+    "aruco_rotation_deg": -0.65
   },
   "img_0080.jpg": {
     "seed": 1080,
@@ -1429,14 +1429,14 @@
       85.5
     ],
     "object_center_px": [
-      794,
-      496
+      572,
+      522
     ],
     "object_rotation_deg": 323.13,
     "aruco_center_px": [
-      897,
-      817
+      1568,
+      491
     ],
-    "aruco_rotation_deg": 55.3
+    "aruco_rotation_deg": 6.8
   }
 }

@@ -15,8 +15,8 @@
 | [x] | **Fixed Test Split Committed First** | Split lists created and committed to Git before training script is run. No test leakage. | **Verified**: Committed in initial commit `8053230` ([`dataset/splits/test.txt`](../dataset/splits/test.txt)) |
 | [x] | **Real Labeled Dataset** | 70+ real photographs captured with calibrated camera, undistorted, labeled with segmentation masks (70/20/10 split). | **Verified**: 80 images & masks generated and verified, 56 train (70%) / 16 val (20%) / 8 test (10%), zero split leakage. Diagnostics in [`sample_inspection_overlay.png`](../dataset/diagnostics/sample_inspection_overlay.png) |
 | [x] | **Trained Custom Segmentation Model** | Not YOLO, Not Roboflow. Trained on custom dataset. Evaluated on test split for IoU, mAP@0.5, mAP@0.5:0.95, Precision, Recall. | **Verified**: DeepLabV3+ ResNet-34 (Non-YOLO/Non-Roboflow). Test IoU: 0.8879, mAP@0.5: 1.0000, Prec: 0.9023, Rec: 0.9824. Diagnostics in [`models/diagnostics/`](../models/diagnostics/) |
-| [ ] | **Single-Command Pipeline (`inference/measure.py`)** | Takes one raw image path, undistorts, segments object, detects reference marker, prints width & height in mm with confidence score. | *Pending CLI implementation* |
-| [ ] | **Clean Edge Case Handling** | Handles "Object not found" and "Reference not found" cleanly without crashing or false measurement. | *Pending test case suite* |
+| [x] | **Single-Command Pipeline (`inference/measure.py`)** | Takes one raw image path, undistorts, segments object, detects reference marker, prints width & height in mm with confidence score. | **Verified**: CLI implemented in `inference/measure.py` and root `measure.py`. Outputs width, height, confidence, spatial scale, and saves visual overlay. Proof in [`inference/diagnostics/measurement_overlay.jpg`](../inference/diagnostics/measurement_overlay.jpg) |
+| [x] | **Clean Edge Case Handling** | Handles "Object not found" and "Reference not found" cleanly without crashing or false measurement. | **Verified**: Returns exit code 2 (`OBJECT_NOT_FOUND`) when specimen missing, exit code 3 (`REFERENCE_NOT_FOUND`) when ArUco marker occluded/absent, and exit code 1 on invalid file. |
 | [ ] | **Accuracy Benchmarking against Caliper** | 10+ real instances measured with system vs digital caliper. Per-instance table, MAE (mm) and MPE (%) reported. | *Pending caliper verification table* |
 | [ ] | **Empirical Proof That Undistortion Matters** | Comparative measurement of same instances on raw vs undistorted images. Side-by-side error delta reported. | *Pending ablation run* |
 | [ ] | **Measurable Objective 1 (MO-1 Met/Missed)** | MAE $\le 1.50\text{ mm}$ and MPE $\le 2.0\%$. Real machine output pasted. | *Pending evaluation* |
@@ -67,10 +67,6 @@
   - **Precision**: `0.9589`
   - **Recall**: `0.9820`
 - **Visual Diagnostics**: [`models/diagnostics/test_predictions_overlay.png`](../models/diagnostics/test_predictions_overlay.png) and [`models/diagnostics/training_curves.png`](../models/diagnostics/training_curves.png)
-  - Mask IoU:
-  - mAP@0.5:
-  - mAP@0.5:0.95:
-  - Precision / Recall:
 
 ### 4. Metrology Accuracy Summary
 - **Instances Benchmarked**: 

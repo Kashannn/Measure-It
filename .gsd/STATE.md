@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 Current Milestone: Phase 4 — Single-Command Metrology Engine (Inference)
+## 🎯 Current Milestone: Phase 5 — Accuracy Benchmarking & Undistortion Ablation
 
 ### Implementation Status by Module
 
@@ -29,12 +29,14 @@
 | **Custom Model Architecture** | `models/model.py` | DeepLabV3+ (ResNet-34) | Strictly NO YOLO, NO Roboflow | ✅ Complete (SMP Architecture) |
 | **Model Training Loop** | `models/train.py` | PyTorch / AdamW / BCE+Dice | Checkpoint selection on val IoU | ✅ Complete (Best Val IoU 0.9364) |
 | **Test Split Evaluation** | `models/evaluate.py` | Isolated Test Split (test.txt)| Test IoU 0.9423, mAP@0.5 1.0000 | ✅ Complete (MO-2 Passed) |
-| **Single-Command Pipeline** | `inference/measure.py` | Standalone CLI | Image in $\to$ mm out with overlay | ⏳ Ready |
-| **Reference Detection** | `inference/utils.py` | `cv2.aruco` Sub-pixel | Metric scale (pixels per mm) | ⏳ Ready |
-| **Caliper Accuracy Benchmark** | `measurement/benchmark.py`| Metric Comparison | 10+ instances vs digital caliper (MAE, MPE) | ⏳ Ready |
-| **Undistortion Ablation Proof**| `measurement/ablation.py` | Comparative Script | Raw vs Undistorted side-by-side | ⏳ Ready |
-| **Tilt Breaking Condition** | `measurement/tilt_test.py`| Degradation Curve | Error vs Camera tilt ($0^\circ \to 45^\circ$) | ⏳ Ready |
-| **Defensive Rejection** | `inference/guardrails.py`| Refusal Thresholds | Refuse tilted/low-confidence/obscured | ⏳ Ready |
+| **Single-Command Pipeline** | `inference/measure.py` / `measure.py` | Standalone CLI | Image in $\to$ mm out with overlay | ✅ Complete (Verified CLI & Exit Codes) |
+| **Reference Detection** | `inference/detector.py` | `cv2.aruco` Sub-pixel | Metric scale (pixels per mm) | ✅ Complete (ArucoDetector integrated) |
+| **Contour Dimension Extractor**| `inference/geometry.py` | `cv2.minAreaRect` | Pixels to mm dimension derivation | ✅ Complete (K1 Answer Documented) |
+| **Metrology Visualizer** | `inference/visualizer.py`| OpenCV Metrology HUD | Bounding boxes, mm labels, HUD banner | ✅ Complete (Diagnostics saved) |
+| **Caliper Accuracy Benchmark** | `measurement/benchmark.py`| Metric Comparison | 10+ instances vs digital caliper (MAE, MPE) | ⏳ Next |
+| **Undistortion Ablation Proof**| `measurement/ablation.py` | Comparative Script | Raw vs Undistorted side-by-side | ⏳ Next |
+| **Tilt Breaking Condition** | `measurement/stress_test_tilt.py`| Degradation Curve | Error vs Camera tilt ($0^\circ \to 45^\circ$) | ⏳ Pending |
+| **Defensive Rejection** | `inference/guardrails.py`| Refusal Thresholds | Refuse tilted/low-confidence/obscured | ⏳ Pending |
 | **5-Minute Loom Recording** | Video URL / Submission | Screen + Webcam Demo | Answer K1, K2, K3, K4 on camera | ⏳ Rehearsed / Pending Video |
 
 ---

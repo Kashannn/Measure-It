@@ -31,8 +31,8 @@ class MetrologyDatasetGenerator:
         # Generate raw 4x4 marker
         marker_raw = cv2.aruco.generateImageMarker(self.aruco_dict, 0, size_px)
 
-        # Add physical white quiet zone / paper margin (15% of size)
-        margin = int(size_px * 0.15)
+        # Add physical white quiet zone / paper margin (35% of size)
+        margin = int(size_px * 0.35)
         full_size = size_px + 2 * margin
         marker = np.ones((full_size, full_size, 3), dtype=np.uint8) * 250
         marker[margin : margin + size_px, margin : margin + size_px] = cv2.cvtColor(
@@ -124,7 +124,8 @@ class MetrologyDatasetGenerator:
         M[0, 2] += (new_w / 2.0) - pw / 2.0
         M[1, 2] += (new_h / 2.0) - ph / 2.0
 
-        rotated_patch = cv2.warpAffine(patch, M, (new_w, new_h), flags=cv2.INTER_LINEAR, borderValue=(0, 0, 0))
+        border_color = (0, 0, 0) if is_target_object else (250, 250, 250)
+        rotated_patch = cv2.warpAffine(patch, M, (new_w, new_h), flags=cv2.INTER_LINEAR, borderValue=border_color)
         rotated_mask = cv2.warpAffine(patch_mask, M, (new_w, new_h), flags=cv2.INTER_NEAREST, borderValue=0)
 
         # Place onto canvas
@@ -176,7 +177,7 @@ class MetrologyDatasetGenerator:
         obj_w_px = int(self.config.object_nominal_width_mm * ppm)
         obj_h_px = int(self.config.object_nominal_height_mm * ppm)
 
-        aruco_texture = self.generate_aruco_texture(size_px=int(aruco_px * 0.8))
+        aruco_texture = self.generate_aruco_texture(size_px=aruco_px)
         aruco_mask = np.ones(aruco_texture.shape[:2], dtype=np.uint8) * 255
 
         obj_texture, obj_mask = self.generate_object_texture(obj_w_px, obj_h_px)
@@ -184,17 +185,15 @@ class MetrologyDatasetGenerator:
         canvas = self.create_surface_background(seed)
         canvas_mask = np.zeros((self.h, self.w), dtype=np.uint8)
 
-        # Spatial placement: Target object placed in central/varying zone
-        obj_cx = rng.randint(int(self.w * 0.35), int(self.w * 0.75))
-        obj_cy = rng.randint(int(self.h * 0.30), int(self.h * 0.70))
+        # Designated inspection zone for target object (left / central zone)
+        obj_cx = rng.randint(450, 950)
+        obj_cy = rng.randint(350, 750)
         obj_rot = rng.uniform(0.0, 360.0)
 
-        # ArUco placed coplanar nearby (distance: 250-450 px away)
-        offset_dist = rng.uniform(280.0, 420.0)
-        offset_angle = rng.uniform(0.0, 2 * np.pi)
-        aruco_cx = int(np.clip(obj_cx + offset_dist * np.cos(offset_angle), aruco_px, self.w - aruco_px))
-        aruco_cy = int(np.clip(obj_cy + offset_dist * np.sin(offset_angle), aruco_px, self.h - aruco_px))
-        aruco_rot = rng.uniform(0.0, 360.0)
+        # Designated metric fiducial zone (coplanar right side of plate)
+        aruco_cx = rng.randint(1300, 1650)
+        aruco_cy = rng.randint(350, 750)
+        aruco_rot = rng.uniform(-10.0, 10.0)
 
         # Paste ArUco marker (is_target_object=False)
         self.paste_rotated_patch(
