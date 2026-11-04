@@ -78,23 +78,19 @@
     },
     {
       "angle_deg": 40,
-      "status": "SUCCESS",
-      "meas_width_mm": 104.75,
-      "meas_height_mm": 132.26,
-      "mae_mm": 48.755,
-      "mpe_pct": 74.34,
+      "status": "UNTRUSTWORTHY_INPUT_REJECTED",
+      "mae_mm": null,
+      "mpe_pct": null,
       "skew_ratio": 1.811,
-      "verdict": "UNACCEPTABLE"
+      "verdict": "REJECTED_OR_LOST"
     },
     {
       "angle_deg": 45,
-      "status": "SUCCESS",
-      "meas_width_mm": 109.19,
-      "meas_height_mm": 138.49,
-      "mae_mm": 54.09,
-      "mpe_pct": 82.09,
+      "status": "UNTRUSTWORTHY_INPUT_REJECTED",
+      "mae_mm": null,
+      "mpe_pct": null,
       "skew_ratio": 1.857,
-      "verdict": "UNACCEPTABLE"
+      "verdict": "REJECTED_OR_LOST"
     }
   ]
 }
