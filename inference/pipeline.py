@@ -14,6 +14,7 @@ from calibration.calibrator import CameraParameters
 from models.model import build_model
 from .detector import ReferenceDetector, ReferenceDetectionResult
 from .geometry import MetricContourExtractor, MetricMeasurementResult
+from .guardrails import InputGuardrails
 from .visualizer import MetrologyVisualizer
 
 
@@ -81,10 +82,11 @@ class MetrologyPipeline:
         self.model.load_state_dict(checkpoint["model_state_dict"])
         self.model.eval()
 
-        # 3. Initialize Detectors & Visualizers
+        # 3. Initialize Detectors, Visualizers, and Guardrails
         self.ref_detector = ReferenceDetector(marker_size_mm=50.0)
-        self.contour_extractor = MetricContourExtractor(min_area_px=500)
+        self.contour_extractor = MetricContourExtractor(min_area_px=5000)
         self.visualizer = MetrologyVisualizer()
+        self.guardrails = InputGuardrails()
 
         # Preprocessing transforms for model input
         h_in = self.cfg.get("input_height", 512)
@@ -157,6 +159,24 @@ class MetrologyPipeline:
                 undistorted_image=processed_img,
             )
 
+        # STEP 2b: Defensive Rejection Pre-Check (Lighting, Blur, Severe Tilt Skew)
+        pre_guard = self.guardrails.check_pre_inference(processed_img, ref_res.tilt_skew_ratio)
+        if not pre_guard.passed:
+            overlay = self.visualizer.render_overlay(
+                processed_img,
+                None,
+                MetricMeasurementResult(found=False),
+                ref_res,
+                confidence=0.0,
+            )
+            return MeasurementOutput(
+                status="UNTRUSTWORTHY_INPUT_REJECTED",
+                error_message=pre_guard.reason,
+                pixels_per_mm=round(ref_res.pixels_per_mm, 2) if ref_res.pixels_per_mm else None,
+                overlay_image=overlay,
+                undistorted_image=processed_img,
+            )
+
         # STEP 3: Semantic Segmentation Inference
         rgb_img = cv2.cvtColor(processed_img, cv2.COLOR_BGR2RGB)
         tensor_in = self.transform(image=rgb_img)["image"].unsqueeze(0).to(self.device)
@@ -196,6 +216,30 @@ class MetrologyPipeline:
             return MeasurementOutput(
                 status="OBJECT_NOT_FOUND",
                 error_message=metric_res.error_message,
+                confidence=round(confidence, 3),
+                pixels_per_mm=round(ref_res.pixels_per_mm, 2),
+                overlay_image=overlay,
+                undistorted_image=processed_img,
+                binary_mask=binary_mask_full,
+            )
+
+        # STEP 4b: Defensive Rejection Post-Check (Low Model Confidence, Anomalous Geometry)
+        post_guard = self.guardrails.check_post_inference(
+            confidence, metric_res.width_mm, metric_res.height_mm
+        )
+        if not post_guard.passed:
+            overlay = self.visualizer.render_overlay(
+                processed_img,
+                binary_mask_full,
+                metric_res,
+                ref_res,
+                confidence=confidence,
+            )
+            return MeasurementOutput(
+                status="UNTRUSTWORTHY_INPUT_REJECTED",
+                error_message=post_guard.reason,
+                width_mm=round(metric_res.width_mm, 2),
+                height_mm=round(metric_res.height_mm, 2),
                 confidence=round(confidence, 3),
                 pixels_per_mm=round(ref_res.pixels_per_mm, 2),
                 overlay_image=overlay,

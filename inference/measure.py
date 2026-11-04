@@ -127,6 +127,16 @@ def main():
             print(f"[+] Diagnostic overlay saved to: {out_overlay_path}")
             print("=" * 72)
             sys.exit(3)
+        elif output.status == "UNTRUSTWORTHY_INPUT_REJECTED":
+            print("-" * 72)
+            print(f"  [!] Defensive Rejection : {output.error_message}")
+            if output.confidence is not None:
+                print(f"  Model Confidence        : {output.confidence:.3f}")
+            if output.pixels_per_mm is not None:
+                print(f"  Spatial Scale (PPM)     : {output.pixels_per_mm:.2f} px/mm")
+            print(f"[+] Diagnostic overlay saved to: {out_overlay_path}")
+            print("=" * 72)
+            sys.exit(4)
         else:
             print("-" * 72)
             print(f"  [!] Failure Error    : {output.error_message}")

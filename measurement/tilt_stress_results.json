@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "breaking_angle_deg": 0,
+  "max_reliable_angle_deg": 20,
+  "rejection_skew_threshold": 1.12,
+  "test_results": [
+    {
+      "angle_deg": 0,
+      "status": "SUCCESS",
+      "meas_width_mm": 55.18,
+      "meas_height_mm": 88.67,
+      "mae_mm": 2.175,
+      "mpe_pct": 2.95,
+      "skew_ratio": 1.023,
+      "verdict": "DEGRADED"
+    },
+    {
+      "angle_deg": 5,
+      "status": "SUCCESS",
+      "meas_width_mm": 55.13,
+      "meas_height_mm": 90.7,
+      "mae_mm": 3.165,
+      "mpe_pct": 4.09,
+      "skew_ratio": 1.028,
+      "verdict": "DEGRADED"
+    },
+    {
+      "angle_deg": 10,
+      "status": "SUCCESS",
+      "meas_width_mm": 55.29,
+      "meas_height_mm": 92.28,
+      "mae_mm": 4.035,
+      "mpe_pct": 5.16,
+      "skew_ratio": 1.028,
+      "verdict": "UNACCEPTABLE"
+    },
+    {
+      "angle_deg": 15,
+      "status": "SUCCESS",
+      "meas_width_mm": 53.22,
+      "meas_height_mm": 74.44,
+      "mae_mm": 5.92,
+      "mpe_pct": 7.19,
+      "skew_ratio": 1.04,
+      "verdict": "UNACCEPTABLE"
+    },
+    {
+      "angle_deg": 20,
+      "status": "REFERENCE_NOT_FOUND",
+      "mae_mm": null,
+      "mpe_pct": null,
+      "skew_ratio": null,
+      "verdict": "REJECTED_OR_LOST"
+    },
+    {
+      "angle_deg": 25,
+      "status": "REFERENCE_NOT_FOUND",
+      "mae_mm": null,
+      "mpe_pct": null,
+      "skew_ratio": null,
+      "verdict": "REJECTED_OR_LOST"
+    },
+    {
+      "angle_deg": 30,
+      "status": "REFERENCE_NOT_FOUND",
+      "mae_mm": null,
+      "mpe_pct": null,
+      "skew_ratio": null,
+      "verdict": "REJECTED_OR_LOST"
+    },
+    {
+      "angle_deg": 35,
+      "status": "REFERENCE_NOT_FOUND",
+      "mae_mm": null,
+      "mpe_pct": null,
+      "skew_ratio": null,
+      "verdict": "REJECTED_OR_LOST"
+    },
+    {
+      "angle_deg": 40,
+      "status": "SUCCESS",
+      "meas_width_mm": 104.75,
+      "meas_height_mm": 132.26,
+      "mae_mm": 48.755,
+      "mpe_pct": 74.34,
+      "skew_ratio": 1.811,
+      "verdict": "UNACCEPTABLE"
+    },
+    {
+      "angle_deg": 45,
+      "status": "SUCCESS",
+      "meas_width_mm": 109.19,
+      "meas_height_mm": 138.49,
+      "mae_mm": 54.09,
+      "mpe_pct": 82.09,
+      "skew_ratio": 1.857,
+      "verdict": "UNACCEPTABLE"
+    }
+  ]
+}
